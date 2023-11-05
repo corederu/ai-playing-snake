@@ -1,4 +1,4 @@
-# Ai playing Snake
+# 🐍 Ai playing Snake
 
 ![Snake AI Demo](gif.gif)
 
@@ -30,7 +30,7 @@ Before running the project, make sure you have the following dependencies instal
 1. Clone this repository to your computer:
 
    ```bash
-   git clone https://github.com/your_user/snake-ai.git
+   git clone https://github.com/corederu/ai-playing-snake.git
 
 2. run `main.py`
 
