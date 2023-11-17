@@ -66,7 +66,7 @@ def move(direction, body, foodX, foodY, score) :
     return body, foodX, foodY, score
 
 
-def show(window, body, foodX, foodY, walk) :
+def show(window, body, foodX, foodY, walk, score) :
 
     # Walk 
     if True :
@@ -81,6 +81,12 @@ def show(window, body, foodX, foodY, walk) :
     
     # Food
     pygame.draw.rect(window, (255,0,0), (foodX*15, foodY*15, 15, 15))
+
+    # Score
+    font = pygame.font.SysFont('Arial', 20)
+    text = font.render("Score : " + str(score), True, (255,255,255))
+    window.blit(text, (0,0))
+
 
 
 class Node:
@@ -268,18 +274,17 @@ while start:
     
 
     # Affiche le snake
-    show(window, body, foodX, foodY, walk)
+    show(window, body, foodX, foodY, walk, score)
 
     # Si crash
     if len(body) == 0 :
-        print("SCORE : " + str(score))
         body = [[20,20]]
         foodX = random.randint(0, 39)
         foodY = random.randint(0, 39)
         score = 0
 
         # Affiche le snake
-        show(window, body, foodX, foodY, walk)
+        show(window, body, foodX, foodY, walk, score)
 
     
     # Refresh
